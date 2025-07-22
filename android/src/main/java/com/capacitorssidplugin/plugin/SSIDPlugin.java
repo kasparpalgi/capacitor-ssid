@@ -99,8 +99,8 @@ public class SSIDPlugin extends Plugin {
     }
 
     @Override
-    protected void handleOnPermissionResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.handleOnPermissionResult(requestCode, permissions, grantResults);
+    protected void handleRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.handleRequestPermissionsResult(requestCode, permissions, grantResults);
         
         PluginCall savedCall = getSavedCall();
         if (savedCall == null) {
