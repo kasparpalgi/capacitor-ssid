@@ -5,6 +5,7 @@ NOTE: tested and working on Android with Capacitor 7.x but not tested on iOS!
 ## Usage in your Capacitor app
 
 1. Install the plugin in your Capacitor project:  
+
    ```bash
    npm i capacitor-ssid-plugin
    npx cap sync
@@ -12,30 +13,33 @@ NOTE: tested and working on Android with Capacitor 7.x but not tested on iOS!
 
 2. Add permissions to your app:
 
-   Android (android/app/src/main/AndroidManifest.xml):
+Android (android/app/src/main/AndroidManifest.xml):
 
-    ```xml
-   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-   ```
+```xml
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
 
-   iOS (ios/App/App/Info.plist):
+iOS (ios/App/App/Info.plist):
 
-   ```xml
-   <key>NSLocationWhenInUseUsageDescription</key>
-   <string>This app needs location access to detect WiFi network names.</string>
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs location access to detect WiFi network names.</string>
+```
 
-   iOS also requires adding entitlements (ios/App/App/App.entitlements):
+iOS also requires adding entitlements (ios/App/App/App.entitlements):
 
-   ```xml
-   <key>com.apple.developer.networking.HotspotConfiguration</key>
-   <true/>
-   <key>com.apple.developer.networking.networkextension</key>
-   <array>
-       <string>hotspot-configuration</string>
-   </array>
-   ```
+```xml
+<key>com.apple.developer.networking.HotspotConfiguration</key>
+<true/>
+<key>com.apple.developer.networking.networkextension</key>
+<array>
+  <string>hotspot-configuration</string>
+</array>
+```
+
+### Import the plugin to your app
 
 ```typescript
 import { SSIDPlugin } from 'capacitor-ssid-plugin';
@@ -57,28 +61,6 @@ async function checkCurrentNetwork() {
   } catch (error) {
     console.error('Error getting SSID:', error);
     return null;
-  }
-}
-```
-
-### Example usage in a component
-
-```typescript
-async function handleCheckNetwork() {
-  const ssid = await checkCurrentNetwork();
-  
-  if (ssid) {
-    // Device is connected to WiFi
-    if (ssid === 'YourTargetNetwork') {
-      // Connected to the expected network
-      console.log('Connected to target network!');
-    } else {
-      // Connected to a different network
-      console.log(`Connected to ${ssid}, but expected YourTargetNetwork`);
-    }
-  } else {
-    // Not connected to WiFi or couldn't detect SSID
-    console.log('No WiFi connection detected');
   }
 }
 ```
