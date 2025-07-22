@@ -3,7 +3,6 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var core = require('@capacitor/core');
-var definitions_js = require('./definitions.js');
 
 function _interopNamespace(e) {
     if (e && e.__esModule) return e;
@@ -29,10 +28,4 @@ const SSIDPlugin = core.registerPlugin("SSIDPlugin", {
 });
 
 exports.SSIDPlugin = SSIDPlugin;
-Object.keys(definitions_js).forEach(function (k) {
-    if (k !== 'default' && !exports.hasOwnProperty(k)) Object.defineProperty(exports, k, {
-        enumerable: true,
-        get: function () { return definitions_js[k]; }
-    });
-});
 //# sourceMappingURL=plugin.cjs.js.map

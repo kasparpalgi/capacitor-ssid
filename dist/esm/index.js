@@ -3,5 +3,4 @@ import { registerPlugin } from "@capacitor/core";
 const SSIDPlugin = registerPlugin("SSIDPlugin", {
     web: () => import("./web").then((m) => new m.SSIDPluginWeb()),
 });
-export * from "./definitions";
 export { SSIDPlugin };

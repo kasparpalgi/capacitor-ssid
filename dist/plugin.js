@@ -1,4 +1,4 @@
-var capacitorSsidPlugin = (function (exports, core, definitions_js) {
+var capacitorSsidPlugin = (function (exports, core) {
     'use strict';
 
     // src/index.ts
@@ -7,16 +7,10 @@ var capacitorSsidPlugin = (function (exports, core, definitions_js) {
     });
 
     exports.SSIDPlugin = SSIDPlugin;
-    Object.keys(definitions_js).forEach(function (k) {
-        if (k !== 'default' && !exports.hasOwnProperty(k)) Object.defineProperty(exports, k, {
-            enumerable: true,
-            get: function () { return definitions_js[k]; }
-        });
-    });
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
     return exports;
 
-})({}, capacitorExports, definitions_js);
+})({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map

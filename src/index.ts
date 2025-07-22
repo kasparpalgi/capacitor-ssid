@@ -6,5 +6,5 @@ const SSIDPlugin = registerPlugin<SSIDPluginPlugin>("SSIDPlugin", {
   web: () => import("./web").then((m) => new m.SSIDPluginWeb()),
 });
 
-export * from "./definitions";
-export { SSIDPlugin }   ;
+export { SSIDPlugin };
+export type { SSIDPluginPlugin };
