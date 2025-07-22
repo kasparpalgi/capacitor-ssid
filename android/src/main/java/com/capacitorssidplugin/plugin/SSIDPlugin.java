@@ -1,5 +1,5 @@
-// android/src/main/java/com/yourpackage/ssidplugin/SSIDPlugin.java
-package com.yourpackage.ssidplugin;
+// android/src/main/java/com/capacitorssidplugin/plugin/SSIDPlugin.java
+package com.capacitorssidplugin.plugin;
 
 import android.Manifest;
 import android.content.Context;
