@@ -1,6 +1,6 @@
 {
     "name": "capacitor-ssid-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Simple SSID detection plugin for Capacitor",
     "main": "dist/plugin.cjs.js",
     "module": "dist/esm/index.js",
@@ -12,14 +12,14 @@
         "ios/",
         "CapacitorSsidPlugin.podspec"
     ],
-    "author": "Your Name",
+    "author": "Kaspar L. Palgi",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "your-repo-url"
+        "url": "https://github.com/kasparpalgi/capacitor-ssid.git"
     },
     "bugs": {
-        "url": "your-repo-url/issues"
+        "url": "https://github.com/kasparpalgi/capacitor-ssid/issues"
     },
     "keywords": [
         "capacitor",
