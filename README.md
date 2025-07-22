@@ -65,14 +65,15 @@ async function handleCheckNetwork() {
    ├── package.json
    └── CapacitorSsidPlugin.podspec
 
-1. Build the plugin:
-   npm run build
 
-2. Install in your app:
-   npm install path/to/your-plugin
+## Installation and Setup
+1. Install the plugin in your Capacitor project:  
+   ```bash
+   npm i capacitor-ssid-plugin
    npx cap sync
+   ```
 
-3. Add permissions to your app:
+1. Add permissions to your app:
 
    Android (android/app/src/main/AndroidManifest.xml):
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -91,13 +92,9 @@ async function handleCheckNetwork() {
        <string>hotspot-configuration</string>
    </array>
 
-4. Important Notes:
+## Important Notes
+
    - On Android 10+ (API 29+), you need location permissions to access SSID
    - On iOS 14+, apps need special entitlements from Apple for SSID access
    - For production apps, you might need to request these entitlements from Apple
-   - Test thoroughly on real devices, not simulators
-
-5. Alternative for development/testing:
-   If you have issues with permissions/entitlements, you can modify the plugin
-   to return a mock SSID in development mode.
-*/
+   - Test thoroughly on real devices, not simulators before production use
