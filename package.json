@@ -1,6 +1,6 @@
 {
     "name": "capacitor-ssid-plugin",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Simple SSID detection plugin for Capacitor",
     "main": "dist/plugin.cjs.js",
     "module": "dist/esm/index.js",
