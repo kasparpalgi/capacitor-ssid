@@ -1,6 +1,41 @@
 # Capacitor SSID Plugin
 
+NOTE: tested and working on Android with Capacitor 7.x but not tested on iOS!
+
 ## Usage in your Capacitor app
+
+1. Install the plugin in your Capacitor project:  
+   ```bash
+   npm i capacitor-ssid-plugin
+   npx cap sync
+   ```
+
+2. Add permissions to your app:
+
+   Android (android/app/src/main/AndroidManifest.xml):
+
+    ```xml
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   ```
+
+   iOS (ios/App/App/Info.plist):
+
+   ```xml
+   <key>NSLocationWhenInUseUsageDescription</key>
+   <string>This app needs location access to detect WiFi network names.</string>
+
+   iOS also requires adding entitlements (ios/App/App/App.entitlements):
+
+   ```xml
+   <key>com.apple.developer.networking.HotspotConfiguration</key>
+   <true/>
+   <key>com.apple.developer.networking.networkextension</key>
+   <array>
+       <string>hotspot-configuration</string>
+   </array>
+   ```
 
 ```typescript
 import { SSIDPlugin } from 'capacitor-ssid-plugin';
@@ -50,6 +85,7 @@ async function handleCheckNetwork() {
 
 ## Plugin directory structure:
 
+```
    ssid-plugin/
    ├── src/
    │   ├── definitions.ts
@@ -64,33 +100,7 @@ async function handleCheckNetwork() {
    │       └── SSIDPlugin.m
    ├── package.json
    └── CapacitorSsidPlugin.podspec
-
-
-## Installation and Setup
-1. Install the plugin in your Capacitor project:  
-   ```bash
-   npm i capacitor-ssid-plugin
-   npx cap sync
-   ```
-
-1. Add permissions to your app:
-
-   Android (android/app/src/main/AndroidManifest.xml):
-   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-   iOS (ios/App/App/Info.plist):
-   <key>NSLocationWhenInUseUsageDescription</key>
-   <string>This app needs location access to detect WiFi network names.</string>
-
-   iOS also requires adding entitlements (ios/App/App/App.entitlements):
-   <key>com.apple.developer.networking.HotspotConfiguration</key>
-   <true/>
-   <key>com.apple.developer.networking.networkextension</key>
-   <array>
-       <string>hotspot-configuration</string>
-   </array>
+```
 
 ## Important Notes
 
