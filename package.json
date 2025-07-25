@@ -1,7 +1,7 @@
 {
-    "name": "capacitor-ssid-plugin",
-    "version": "1.2.2",
-    "description": "Simple SSID detection plugin for Capacitor",
+    "name": "@kasparpalgi/capacitor-ssid",
+    "version": "1.2.4",
+    "description": "Simple and lightweight SSID detection plugin for Capacitor",
     "main": "dist/plugin.cjs.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/index.d.ts",
@@ -14,6 +14,9 @@
     ],
     "author": "Kaspar L. Palgi",
     "license": "MIT",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/kasparpalgi/capacitor-ssid.git"
